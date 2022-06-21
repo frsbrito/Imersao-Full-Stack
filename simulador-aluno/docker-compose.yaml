@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    container_name: simulator
+    volumes:
+    - .:/go/src #volume criado na pasta atual 
+    extra_hosts:
+    - "host.docker.internal:172.17.0.1" #usamos para comunicar com outros containers, como o do kafka
