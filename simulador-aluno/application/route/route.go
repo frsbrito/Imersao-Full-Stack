@@ -2,6 +2,7 @@ package route
 
 import (
 	"bufio"
+	"encoding/json"
 	"errors"
 	"os"
 	"strconv"
@@ -10,7 +11,7 @@ import (
 
 type Route struct {
 	ID 			string		`json:"routeId"`
-	Client 		string		`json:"clientId"`
+	ClientID	string		`json:"clientId"`
 	Positions 	[]Position	`json:"position"`
 }
 
@@ -27,7 +28,7 @@ type PartialRoutePosition struct {
 }
 
 func(r *Route) LoadPositions() error {
-	if r.ID == '' {
+	if r.ID == "" {
 		return errors.New("route id not informed")
 	}
 	f, err := os.Open("destinations/" + r.ID + ".txt")
@@ -46,7 +47,7 @@ func(r *Route) LoadPositions() error {
 		if err != nil {
 			return err
 		}
-		r.Positions = append(r.Position, Position{
+		r.Positions = append(r.Positions, Position{
 			Lat: lat,
 			Long: long,
 		})
