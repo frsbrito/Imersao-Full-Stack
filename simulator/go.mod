@@ -1,4 +1,4 @@
-module github.com/frsbrito/Imersao-Full-Stack
+module github.com/frsbrito/Imersao-Full-Stack/simulator
 
 go 1.16
 
