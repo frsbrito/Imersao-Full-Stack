@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	kafka2 "github.com/frsbrito/Imersao-Full-Stack/application/kafka"
-	"github.com/frsbrito/Imersao-Full-Stack/infra/kafka"
+	// kafka2 "github.com/frsbrito/Imersao-Full-Stack/application/kafka"
+	"github.com/frsbrito/Imersao-Full-Stack/simulator/infra/kafka"
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/joho/godotenv"
 	"log"
